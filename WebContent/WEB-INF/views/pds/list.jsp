@@ -7,6 +7,13 @@
 <c:set value="${dataMap.pageMaker }" var="pageMaker"/>
 <c:set value="${pageMaker.cri }" var="cri"/>
 <%@ include file="/WEB-INF/include/header.jsp" %>
+<head>
+	<style>
+		a{
+			color:black;
+		}
+	</style>
+</head>
 	 <!-- Main content -->
 	<section class="content-header">
 	  	<div class="container-fluid">
@@ -39,20 +46,20 @@
 					<div class="input-group row">
 						<select class="form-control col-md-3" name="perPageNum" id="perPageNum"
 					  		onchange="list_go();">
-					  		<option value="10" >정렬개수</option>
-					  		<option value="20" >20개씩</option>
-					  		<option value="50">50개씩</option>
-					  		<option value="100">100개씩</option>
+					  		<option value="10" ${cri.perPageNum eq 10 ? 'selected' : '' }>정렬개수</option>
+					  		<option value="20" ${cri.perPageNum eq 20 ? 'selected' : '' }>20개씩</option>
+					  		<option value="50" ${cri.perPageNum eq 30 ? 'selected' : '' }>30개씩</option>
+					  		<option value="100" ${cri.perPageNum eq 50 ? 'selected' : '' }>50개씩</option>
 					  		
 					  	</select>						
 						<select class="form-control col-md-4" name="searchType" id="searchType">
-							<option value="tcw">전 체</option>
-							<option value="t">제 목</option>
-							<option value="w">작성자</option>
-							<option value="c">내 용</option>
-							<option value="tc">제목+내용</option>
-							<option value="cw">작성자+내용</option>							
-							<option value="tcw">작성자+제목+내용</option>
+							<option value="tcw" ${cri.searchType eq 'twc' ? 'selected' : '' }>전 체</option>
+							<option value="t" ${cri.searchType eq 't' ? 'selected' : '' }>제 목</option>
+							<option value="w" ${cri.searchType eq 'w' ? 'selected' : '' }>작성자</option>
+							<option value="c" ${cri.searchType eq 'c' ? 'selected' : '' }>내 용</option>
+							<option value="tc" ${cri.searchType eq 'tc' ? 'selected' : '' }>제목+내용</option>
+							<option value="cw" ${cri.searchType eq 'cw' ? 'selected' : '' }>작성자+내용</option>							
+							<option value="tcw" ${cri.searchType eq 'tcw' ? 'selected' : '' }>작성자+제목+내용</option>
 						</select>					
 						<input  class="form-control" type="text" name="keyword" placeholder="검색어를 입력하세요." value=""/>
 						<span class="input-group-append">
@@ -82,16 +89,15 @@
 						</tr>
 					</c:if>						
 					<c:forEach items="${pdsList }" var="pds">
-						<tr style='font-size:0.85em;' 
-						class='<c:forEach items="${readPdsList }" var="readPds">
-							<c:if test="${readPds.pno eq pds.pno }">bg-secondary color-palette</c:if>
+						<tr style='font-size:0.85em;
+						<c:forEach items="${readPdsList }" var="readPds">
+							<c:if test="${readPds.pno eq pds.pno }">background:lightgray</c:if>
 						</c:forEach>'>
 							<td>${pds.pno }</td>
 							<td id="pdsTitle" style="text-align:left;max-width: 100px; overflow: hidden; 
 													white-space: nowrap; text-overflow: ellipsis; cursor:pointer;" 
 													onclick="OpenWindow('detail.do?from=list&pno=${pds.pno }','상세보기',800,700);">
-								<a href="javascript:OpenWindow('detail.do?from=list&pno=${pds.pno }','상세보기',800,700);"
-									style="width: ">								
+								<a href="javascript:OpenWindow('detail.do?from=list&pno=${pds.pno }','상세보기',800,700);">								
 									<span class="col-sm-12 " >
 										${pds.title }
 									</span>								
