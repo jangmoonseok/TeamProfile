@@ -34,6 +34,9 @@ public interface PdsService {
 	
 	//파일정보 삭제
 	void removePFileByAno(int p_ano)throws SQLException;
+	
+	//중요한 자료글 목록 가져오기
+	Map<String, Object> getImportantList(Criteria cri) throws SQLException;
 
 }
 

@@ -192,4 +192,30 @@ public class PdsServiceImpl implements PdsService {
 		}
 
 	}
+
+
+	@Override
+	public Map<String, Object> getImportantList(Criteria cri) throws SQLException {
+		SqlSession session = sqlSessionFactory.openSession();
+		
+		try {
+			List<PdsVO> pdsList = pdsDAO.selectImportantPdsList(session, cri);
+			
+			if (pdsList != null)
+				for (PdsVO pds : pdsList)
+					addPFileList(session, pds);
+			
+			PageMaker pageMaker = new PageMaker();
+			pageMaker.setCri(cri);
+			pageMaker.setTotalCount(pdsDAO.selectImportantPdsListCount(session));
+
+			Map<String, Object> dataMap = new HashMap<String, Object>();
+			dataMap.put("pdsList", pdsList);
+			dataMap.put("pageMaker", pageMaker);
+
+			return dataMap;
+		} finally {
+			session.close();
+		}
+	}
 }

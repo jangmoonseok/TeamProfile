@@ -120,6 +120,16 @@
 		where pno=#{pno}
 		and reader=#{reader}
 	</select>
+	
+	<select id="selectImportantPdsList" resultType="pds">
+		select * from pds
+		where important = 1
+	</select>
+	
+	<select id="selectImportantPdsListCount" resultType="int">
+		select count(*) from pds
+		where important = 1
+	</select>
 </mapper>  
 
 

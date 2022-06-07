@@ -87,4 +87,20 @@ public class PdsDAOImpl implements PdsDAO{
 		List<PdsVO> readPdsList = session.selectList("Pds-Mapper.selectReadPdsListById", loginUserId);
 		return readPdsList;
 	}
+
+	@Override
+	public List<PdsVO> selectImportantPdsList(SqlSession session, Criteria cri) throws SQLException {
+		int offset=cri.getStartRowNum();
+		int limit=cri.getPerPageNum();
+		RowBounds rowBounds=new RowBounds(offset,limit);
+		
+		List<PdsVO> pdsList = session.selectList("Pds-Mapper.selectImportantPdsList",null,rowBounds);
+		return pdsList;
+	}
+
+	@Override
+	public int selectImportantPdsListCount(SqlSession session) throws SQLException {
+		int count = session.selectOne("Pds-Mapper.selectImportantPdsListCount");
+		return count;
+	}
 }

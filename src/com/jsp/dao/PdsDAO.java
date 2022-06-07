@@ -38,4 +38,8 @@ public interface PdsDAO {
 	
 	//읽은글 목록 가져오기
 	List<PdsVO> selectReadPdsListById(SqlSession session, String loginUserId) throws SQLException;
+	
+	//중요한 자료글 목록 가져오기
+	List<PdsVO> selectImportantPdsList(SqlSession session, Criteria cri) throws SQLException;
+	int selectImportantPdsListCount(SqlSession session) throws SQLException;
 }
