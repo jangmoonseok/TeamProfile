@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.UUID;
 
 import com.jsp.dto.PFileVO;
+import com.jsp.dto.WorkFileVO;
 
 public class MakeFileName {
 	
@@ -35,6 +36,22 @@ public class MakeFileName {
 		}
 		
 		return renamedPfileList;
+	}
+	
+	public static List<WorkFileVO> parseFileNameFromWorkFile(List<WorkFileVO> workFileList, String delimiter){
+		List<WorkFileVO> renamedAttachList = new ArrayList<WorkFileVO>();
+		
+		if(workFileList != null) {
+			for(WorkFileVO workFile : workFileList) {
+				String fileName = workFile.getFileName(); //DB상의 fileName
+				fileName = parseFileNameFromUUID(fileName, delimiter); //uuid가 제거된 fileName
+				workFile.setFileName(fileName);
+				
+				renamedAttachList.add(workFile);
+			}
+		}
+		
+		return renamedAttachList;
 	}
 }
 

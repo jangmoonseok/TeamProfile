@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ include file="/WEB-INF/include/header.jsp" %>
 <head>
  <!-- summernote -->
   <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/bootstrap/plugins/summernote/summernote-bs4.css">
@@ -173,4 +172,3 @@
     	}
     </script>
 </body>
-<%@ include file="/WEB-INF/include/footer.jsp"%> 

@@ -43,6 +43,7 @@ public class PdsDetailAction implements Action{
 			List<PFileVO> renamedPfileList = MakeFileName.parseFileNameFromAttaches(pds.getPfileList(), "\\$\\$");
 			pds.setPfileList(renamedPfileList);
 			
+			request.setAttribute("loginUser", loginUser);
 			request.setAttribute("pds", pds);
 		}catch(Exception e) {
 			e.printStackTrace();

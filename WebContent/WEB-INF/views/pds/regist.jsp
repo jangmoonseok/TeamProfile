@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<%@ include file="/WEB-INF/include/header.jsp" %>
 <head>
 	<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/bootstrap/plugins/summernote/summernote-bs4.min.css">
 </head>
@@ -131,4 +130,3 @@
 		$('form[role="form"]').submit();
 	}
 </script>
-<%@ include file="/WEB-INF/include/footer.jsp"%> 

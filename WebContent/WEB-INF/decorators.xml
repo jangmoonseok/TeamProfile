@@ -4,14 +4,14 @@
 
 <decorators defaultdir="/WEB-INF/decorator">
 
-<!-- 	<decorator name="main" page="main_decorator.jsp"> -->
-<!-- 		<pattern>*.do</pattern> -->
-<!-- 	</decorator> -->
+	<decorator name="main" page="main_decorator.jsp">
+		<pattern>*.do</pattern>
+	</decorator>
 	
-<!-- 	<decorator name="openWindow" page="open_decorator.jsp"> -->
-<!-- 		<pattern>/**/*.do</pattern> -->
-<!-- 		<pattern>/main.do</pattern>		 -->
-<!-- 	</decorator> -->
+	<decorator name="openWindow" page="open_decorator.jsp">
+		<pattern>/**/*.do</pattern>
+		<pattern>/main.do</pattern>		
+	</decorator>
 	
 	<excludes>		
 		<pattern>/resources/*</pattern>

@@ -4,8 +4,8 @@
     
 <script>
 	if('${loginUser.name}'){
-		location.href = "pds/list.do";
-	}else{
+		location.href="index.do";
+	} else {
 		location.href="common/loginForm.do";
 	}
 </script>

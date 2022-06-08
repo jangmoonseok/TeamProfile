@@ -6,14 +6,7 @@
 <c:set value="${dataMap.readPdsList }" var="readPdsList"/>
 <c:set value="${dataMap.pageMaker }" var="pageMaker"/>
 <c:set value="${pageMaker.cri }" var="cri"/>
-<%@ include file="/WEB-INF/include/header.jsp" %>
-<head>
-	<style>
-		a{
-			color:black;
-		}
-	</style>
-</head>
+
 	 <!-- Main content -->
 	<section class="content-header">
 	  	<div class="container-fluid">
@@ -61,9 +54,9 @@
 							<option value="cw" ${cri.searchType eq 'cw' ? 'selected' : '' }>작성자+내용</option>							
 							<option value="tcw" ${cri.searchType eq 'tcw' ? 'selected' : '' }>작성자+제목+내용</option>
 						</select>					
-						<input  class="form-control" type="text" name="keyword" placeholder="검색어를 입력하세요." value=""/>
+						<input  class="form-control" type="text" name="keyword" placeholder="검색어를 입력하세요." value="${param.keyword }"/>
 						<span class="input-group-append">
-							<button class="btn btn-primary" type="button" onclick="" 
+							<button class="btn btn-primary" type="button" onclick="list_go(1);" 
 							data-card-widget="search">
 								<i class="fa fa-fw fa-search"></i>
 							</button>
@@ -75,10 +68,10 @@
 				<table class="table table-bordered text-center" >					
 					<tr style="font-size:0.95em;">
 						<th style="width:10%;">번 호</th>
-						<th style="width:50%;">제 목</th>
-						<th style="">첨부파일</th>
+						<th style="width:40%;">제 목</th>
+						<th style="width:10%;">첨부파일</th>
 						<th style="width:15%;">작성자</th>
-						<th>등록일</th>
+						<th style="width:15%;">등록일</th>
 						<th style="width:10%;">조회수</th>
 					</tr>				
 					<c:if test="${empty pdsList }" >
@@ -96,7 +89,7 @@
 							<td>${pds.pno }</td>
 							<td id="pdsTitle" style="text-align:left;max-width: 100px; overflow: hidden; 
 													white-space: nowrap; text-overflow: ellipsis; cursor:pointer;" 
-													onclick="OpenWindow('detail.do?from=list&pno=${pds.pno }','상세보기',800,700);">
+													onclick="OpenWindow('detail.do?pno=${pds.pno }&from=list','상세보기',800,700);">
 								<a href="javascript:OpenWindow('detail.do?from=list&pno=${pds.pno }','상세보기',800,700);">								
 									<span class="col-sm-12 " >
 										${pds.title }
@@ -139,4 +132,3 @@
     </section>
     <!-- /.content -->
 
-<%@ include file="/WEB-INF/include/footer.jsp"%>

@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ include file="/WEB-INF/include/header.jsp" %>    
 <title>자료실 상세보기</title>
 
 	 <!-- Content Header (Page header) -->
@@ -33,9 +32,14 @@
 					<div class="card-header">
 						<h3 class="card-title">상세보기</h3>
 						<div class ="card-tools">
-							<button type="button" id="modifyBtn" class="btn btn-warning" onclick="submit_go('modifyForm.do','${pds.pno}');">수정</button>						
-					    	<button type="button" id="removeBtn" class="btn btn-danger" onclick="submit_go('remove.do','${pds.pno}');">삭제</button>
-					    	<button type="button" id="listBtn" class="btn btn-primary" onclick="CloseWindow();">취소 </button>
+							<c:if test="${loginUser.id eq pds.writer }">
+								<button type="button" id="modifyBtn" class="btn btn-warning" onclick="submit_go('modifyForm.do','${pds.pno}');">수정</button>						
+						    	<button type="button" id="removeBtn" class="btn btn-danger" onclick="submit_go('remove.do','${pds.pno}');">삭제</button>
+						    	<button type="button" id="listBtn" class="btn btn-primary" onclick="CloseWindow();">취소 </button>
+							</c:if>
+							<c:if test="${loginUser.id ne pds.writer }">
+						    	<button type="button" id="listBtn" class="btn btn-primary" onclick="CloseWindow();">취소 </button>
+							</c:if>
 						</div>
 					</div>
 					<div class="card-body">
@@ -106,4 +110,3 @@
     		location.href = url + "?pno=" + pno;
     	}
     </script>
- <%@ include file="/WEB-INF/include/footer.jsp"%>
