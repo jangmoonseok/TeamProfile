@@ -6,10 +6,11 @@
 
 <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background:#3C5087; color:white;">
     <!-- Brand Logo -->
-    <a href="" class="brand-link">
-      <img src="<%=request.getContextPath() %>/resources/images/spring.jpg" alt="spring.jpg" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">☆ POJO ★</span>
-    </a>
+    <div style="display: flex; justify-content: center;">
+	    <a href="index.jsp" class="brand-link" style="font-size:32px; font-weight:bold;">
+	      <span class="brand-text font-weight-light">☆ POJO ★</span>
+	    </a>
+    </div>
 
     <!-- Sidebar -->
     <div class="sidebar">

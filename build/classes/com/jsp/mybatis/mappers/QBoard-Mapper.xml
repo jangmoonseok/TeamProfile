@@ -100,6 +100,13 @@
 		select qboard_seq.nextval as qno from dual
 	</select>
 	
+	<select id="selectStatusQBoardList" resultType="qboard">
+		select * from q_board where status = '미완료'
+	</select>
+	
+	<select id="selectStatusQBoardListCount" resultType="int">
+		select count(*) from q_board where status = '미완료'
+	</select>
 </mapper>  
 
 

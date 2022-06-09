@@ -20,6 +20,9 @@
 		<typeAlias type="com.jsp.dto.WorkBoardVO"  alias="workBoard"/>	
 		<typeAlias type="com.jsp.dto.WorkFileVO"  alias="workFile"/>	
 		<typeAlias type="com.jsp.dto.WReplyVO"  alias="wReply"/>
+		<typeAlias type="com.jsp.dto.FreeBoardVO"  alias="freeBoard"/>
+		<typeAlias type="com.jsp.dto.FReplyVO"  alias="freply"/>
+		<typeAlias type="com.jsp.dto.NoticeVO" alias="notice"/>
 			
 		
 	</typeAliases>
@@ -50,6 +53,9 @@
 		<mapper resource="com/jsp/mybatis/mappers/WorkBoard-Mapper.xml"/>
 		<mapper resource="com/jsp/mybatis/mappers/WorkFile-Mapper.xml"/>
 		<mapper resource="com/jsp/mybatis/mappers/WReply-Mapper.xml"/>
+		<mapper resource="com/jsp/mybatis/mappers/FreeBoard-Mapper.xml"/>
+		<mapper resource="com/jsp/mybatis/mappers/FReply-Mapper.xml"/>
+		<mapper resource="com/jsp/mybatis/mappers/Notice-Mapper.xml"/>
 	</mappers>
 	
 </configuration>

@@ -49,7 +49,6 @@ public class DashBoardPdsListAction implements Action{
 		}catch(Exception e) {
 			e.printStackTrace();
 			response.sendError(response.SC_INTERNAL_SERVER_ERROR);
-			return url;
 		}
 		
 		return url;

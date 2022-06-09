@@ -19,7 +19,7 @@
 	  	<div class="container-fluid">
 	  		<div class="row md-2">
 	  			<div class="col-sm-6">
-	  				<h1>상세보기</h1>  				
+	  				<h1>질문게시판</h1>  				
 	  			</div>
 	  			<div class="col-sm-6">
 	  				<ol class="breadcrumb float-sm-right">
@@ -46,9 +46,9 @@
 					<div class="card-header">
 						<h3 class="card-title">상세보기</h3>
 						<div class="card-tools">
-							<button type="button" id="modifyBtn" class="btn btn-warning" onclick="modify_go();" ${loginUser.id ne qboard.writer ? 'style="display:none"':'' }>MODIFY</button>						
-						    <button type="button" id="removeBtn" class="btn btn-danger" onclick="remove_go();" ${loginUser.id ne qboard.writer ? 'style="display:none"':'' }>REMOVE</button>
-						    <button type="button" id="listBtn" class="btn btn-primary" onclick="CloseWindow();">CLOSE</button>
+							<button type="button" id="modifyBtn" class="btn btn-warning" onclick="modify_go();" ${loginUser.id ne qboard.writer ? 'style="display:none"':'' }>수정</button>						
+						    <button type="button" id="removeBtn" class="btn btn-danger" onclick="remove_go();" ${loginUser.id ne qboard.writer ? 'style="display:none"':'' }>삭제</button>
+						    <button type="button" id="listBtn" class="btn btn-primary" onclick="CloseWindow();">닫기</button>
 					    </div>
 					</div>
 					<div class="card-body">
@@ -100,8 +100,17 @@
 			<div class="col-md-12">
 				<div class="card card-info">					
 					<div class="card-body">
+						<div class="timeline">
+							<!-- timeline time label -->
+							<div class="time-label" id="repliesDiv">
+								<span class="bg-green">댓글 목록 </span>							
+							</div>
+							
+							
+						</div>
+						<br/>	
 						<div class="card-footer">
-							<label for="newReplyText">Reply Text</label>
+							<label for="newReplyText">댓글</label>
 							<textarea class="textarea" name="newReplyText" id="newReplyText" rows="20"
 										placeholder="REPLY TEXT" style="display: none;"></textarea>
 							<br/>
@@ -110,21 +119,12 @@
 									<input type="text" class="form-control" readonly value="답변이 완료되어 댓글을 작성하실 수 없습니다."/>
 								</c:when>
 								<c:otherwise>
-									<button type="button" class="btn btn-primary" id="replyAddBtn" style="display: none;" onclick="replyRegist_go();">ADD REPLY</button>
-									<button type="button" class="btn btn-primary" id="replywriterBtn" onclick="writerReply();" >WRITER REPLY</button>
+									<button type="button" class="btn btn-primary" id="replyAddBtn" style="display: none;" onclick="replyRegist_go();">작성</button>
+									<button type="button" class="btn btn-primary" id="replywriterBtn" onclick="writerReply();" >댓글창</button>
 								</c:otherwise>
 							</c:choose>
 						</div>
-						<br/>	
 						<!-- The time line -->
-						<div class="timeline">
-							<!-- timeline time label -->
-							<div class="time-label" id="repliesDiv">
-								<span class="bg-green">Replies List </span>							
-							</div>
-							
-							
-						</div>
 						<div class='text-center'>
 							<ul id="pagination" class="pagination justify-content-center m-0" >
 								
@@ -150,14 +150,14 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>        
       </div>
       <div class="modal-body" data-rno>
-        <label for="newReplyText">Modify Reply Text</label>
+        <label for="newReplyText">댓글 수정</label>
         <textarea class="textarea" name="replytext" id="replytext" rows="20"
 									placeholder="REPLY TEXT" style="display: none;"></textarea>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-info" id="replyModBtn" onclick="replyModify_go();">Modify</button>
-        <button type="button" class="btn btn-danger" id="replyDelBtn" onclick="replyRemove_go();">DELETE</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="summernote_off();">Close</button>
+        <button type="button" class="btn btn-info" id="replyModBtn" onclick="replyModify_go();">수정</button>
+        <button type="button" class="btn btn-danger" id="replyDelBtn" onclick="replyRemove_go();">삭제</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="summernote_off();">닫기</button>
       </div>
     </div>
   </div>

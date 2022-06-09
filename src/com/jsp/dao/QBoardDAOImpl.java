@@ -9,7 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import com.jsp.command.Criteria;
 import com.jsp.dto.QBoardVO;
 
-public class QBoardDAOImpl implements QBoardDAO {
+public  class QBoardDAOImpl implements QBoardDAO {
 
 
 	@Override
@@ -64,5 +64,21 @@ public class QBoardDAOImpl implements QBoardDAO {
 		int seq_num=
 				session.selectOne("QBoard-Mapper.selectQBoardSeqNext");
 		return seq_num;
+	}
+
+	@Override
+	public List<QBoardVO> selectStatusQBoardList(SqlSession session, Criteria cri) throws SQLException {
+		int offset = cri.getStartRowNum();
+		int limit = cri.getPerPageNum();
+		RowBounds rowBounds = new RowBounds(offset, limit);
+		
+		List<QBoardVO> qboardList = session.selectList("QBoard-Mapper.selectStatusQBoardList", cri, rowBounds);
+		return qboardList;
+	}
+
+	@Override
+	public int selectStatusQBoardListCount(SqlSession session) throws SQLException {
+		int totalCount = session.selectOne("QBoard-Mapper.selectStatusQBoardListCount");
+		return totalCount;
 	}
 }

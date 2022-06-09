@@ -28,4 +28,8 @@ public interface QBoardDAO {
 
 	// board_seq.nextval 가져오기
 	int selectQBoardSeqNext(SqlSession session) throws SQLException;
+	
+	// 답변완료된 List 가져오기
+	List<QBoardVO> selectStatusQBoardList(SqlSession session, Criteria cri) throws SQLException;
+	int selectStatusQBoardListCount(SqlSession session) throws SQLException;
 }

@@ -23,4 +23,7 @@ public interface QBoardService {
 	
 	// 삭제
 	void remove(int qno)throws SQLException;
+	
+	// 답변완료목록
+	Map<String,Object> getStatusQBoardList(Criteria cri) throws SQLException;
 }

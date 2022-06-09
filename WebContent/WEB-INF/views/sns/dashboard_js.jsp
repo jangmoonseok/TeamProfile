@@ -5,6 +5,7 @@
 		var url = null;
 		
 		if(cate == 'pds') url = 'dashboardPdsList.do?page='+page
+		if(cate == 'qboard') url = 'dashboardQBoardList.do?page='+page
 				
 		location.href = url;
 	}

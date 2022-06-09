@@ -9,7 +9,7 @@
 		}
 	</style>
 </head>
-	<section class="content-header">
+	<section class="content-header" style="padding-bottom:0;">
 		  	<div class="container-fluid">
 		  		<div class="row md-2">
 		  			<div class="col-sm-6">
@@ -37,6 +37,18 @@
 		<div class="row">
 			<div class="col-lg-6">
 				<iframe src="dashboardPdsList.do?page=1" style="width:100%;height:50vh;"></iframe>
+			</div>
+			<div class="col-lg-6">
+				<iframe src="dashboardQBoardList.do?page=1" style="width:100%;height:50vh;"></iframe>
+			</div>
+			
+		</div>
+		<div class="row">
+			<div class="col-lg-6">
+				<iframe src="dashboardWorkBoardList.do?page=1" style="width:100%;height:50vh;"></iframe>
+			</div>
+			<div class="col-lg-6">
+				<iframe src="dashboardFreeBoardList.do?page=1" style="width:100%;height:50vh;"></iframe>
 			</div>
 			
 		</div>

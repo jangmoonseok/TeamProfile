@@ -6,7 +6,7 @@
 <c:set value="${dataMap.pdsList }" var="pdsList"/>
 <c:set value="${pageMaker.cri }" var="cri"/>
 <div class="card">
-<div class="card-header">
+<div class="card-header" style="padding-top:5px;">
 	<h3 class="card-title">
 	중요 자료
 	</h3>
@@ -28,8 +28,8 @@
 <div class="card-body">
 	<table class="table table-bordered text-center">
 		<tr style="font-size:0.95em;">
-			<th style="width:40%;">제 목</th>
-			<th style="">첨부파일</th>
+			<th style="width:60%;">제 목</th>
+			<th style="width:25%;">첨부파일</th>
 			<th style="width:15%;">작성자</th>
 		</tr>	
 		<c:forEach items="${pdsList }" var="pds">
