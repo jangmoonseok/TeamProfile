@@ -5,7 +5,7 @@
 <c:set value="${dataMap.pageMaker }" var="pageMaker"/>
 <c:set value="${dataMap.pdsList }" var="pdsList"/>
 <c:set value="${pageMaker.cri }" var="cri"/>
-<div class="card">
+<div class="card" style="box-shadow: none;">
 <div class="card-header" style="padding-top:5px;">
 	<h3 class="card-title">
 	중요 자료

@@ -5,7 +5,7 @@
 <c:set value="${dataMap.pageMaker }" var="pageMaker"/>
 <c:set value="${dataMap.qboardList }" var="qboardList"/>
 <c:set value="${pageMaker.cri }" var="cri"/>
-<div class="card">
+<div class="card" style="box-shadow: none;">
 <div class="card-header" style="padding-top:5px;">
 	<h3 class="card-title">
 	미해결 질문

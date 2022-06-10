@@ -42,8 +42,8 @@
 					<div class="card-header">
 						<h3 class="card-title">상세보기</h3>
 						<div class="card-tools">
-							<button type="button" id="modifyBtn" class="btn btn-warning" onclick="modify_go();">수정</button>						
-						    <button type="button" id="removeBtn" class="btn btn-danger" onclick="remove_go();">삭제</button>
+							<button type="button" id="modifyBtn" class="btn btn-warning" onclick="modify_go();" ${loginUser.id != freeBoard.id ? 'hidden' : ''}>수정</button>						
+						    <button type="button" id="removeBtn" class="btn btn-danger" onclick="remove_go();" ${loginUser.id != freeBoard.id ? 'hidden' : ''}>삭제</button>
 						    <button type="button" id="listBtn" class="btn btn-primary" onclick="CloseWindow();">닫기</button>
 					    </div>
 					</div>

@@ -41,7 +41,6 @@
 			<div class="col-lg-6">
 				<iframe src="dashboardQBoardList.do?page=1" style="width:100%;height:50vh;"></iframe>
 			</div>
-			
 		</div>
 		<div class="row">
 			<div class="col-lg-6">
@@ -50,7 +49,5 @@
 			<div class="col-lg-6">
 				<iframe src="dashboardFreeBoardList.do?page=1" style="width:100%;height:50vh;"></iframe>
 			</div>
-			
 		</div>
-		
     </section>

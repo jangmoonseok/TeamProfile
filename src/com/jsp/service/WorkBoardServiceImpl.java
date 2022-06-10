@@ -223,8 +223,8 @@ public class WorkBoardServiceImpl implements WorkBoardService {
 					Calendar cal = Calendar.getInstance();
 					cal.setTime(today);
 					cal.add(Calendar.DATE, 3);
-					boolean recent = cal.getTime().after(endDate);
-					if(recent) {					
+					boolean deadline = cal.getTime().after(endDate);
+					if(endDate.after(today) && deadline) {					
 						deadWordBoardList.add(wBoard);
 						int replycnt = wreplyDAO.countWReply(session, wBoard.getWno());
 						wBoard.setWreplycnt(replycnt);
